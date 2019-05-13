@@ -2,28 +2,13 @@ package restapi.model;
 
 import restapi.enumerations.TagEnum;
 
-public class Product {
+public class Product extends ProductBase {
 
-    private final int id;
-    private String name;
     private TagEnum[] tags;
 
     public Product(int id, String name, TagEnum[] tags) {
-        this.id = id;
-        this.name = name;
+        super(id,name);
         this.tags = tags;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-      this.name = name;
     }
 
     public void setTags(TagEnum[] tags) {
@@ -33,4 +18,5 @@ public class Product {
     public TagEnum[] getTags() {
       return tags;
     }
+
 }
