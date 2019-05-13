@@ -54,6 +54,12 @@ public class ProductService {
     return new ProductDto(p.getId(),p.getName(),p.getTags(),tagsVector);
   }
 
+  /**
+   * Returns a list of the three more similar products.
+   * @param productId the product supplied
+   * @param products the payload generated in the previous method
+   * @return a list with the three most similar products.
+  */
   public List<ProductWithEuclideanDistanteDto> calculateThreeMostSimilarProducts(int productId, ProductListDto products) {
 	  
 	  List<ProductDto> productsList = products.getProducts();
